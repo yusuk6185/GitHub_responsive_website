@@ -65,3 +65,55 @@
     color: #cacaca;
 }
 
+/* HEADER */
+header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .75);
+    background: #FFF;
+}
+
+header .inner {
+    height: 78px;
+    max-width: 980px;
+    /* 가운데 정렬 */
+    margin: 0 auto;
+}
+
+header .menu-group {
+    /* 항목 수평 정렬 */
+    display: flex;
+    /* 헤더 안에 수직 정렬. display: flex 인 경우만 사용가능. height: 100%도 설정 해줘야 함.*/
+    align-items: center;
+    height: 100%;
+}
+
+header .logo {
+    margin-right: 10px;
+}
+
+header .logo a {
+    background: url("../img/logo.svg");
+    width: 32px;
+    height: 32px;
+    /* a 태그는 inline 요소라서 범위 설정이 불가능하기 때문에 block으로 바꿔줌 */
+    display: block;
+    /* 들여쓰기 하는 속성. img 태그가 아니라 background 속성으로 이미지를 입혔기 때문에,
+    대체 텍스트 가릴때 사용 */
+    text-indent: -9999px;
+}
+
+header .logo a:hover {
+    background: url("../img/logo_on.svg");
+}
+
+header .main-menu {
+    display: flex;
+}
+
+header .main-menu li a {
+    /* a 태그는 inline 요소이기 때문에 공간 설정 불가능하기 때문에 block으로 바꿔줌 */
+    display: block;
+    /* margin 대신 padding을 쓰는 이유: 클릭하기 편하게 공간 확보 */
+    padding: 10px;
+    color: #3c4146;
+}
