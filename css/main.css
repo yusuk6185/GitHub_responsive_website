@@ -87,6 +87,41 @@ a {
     float: right;
 }
 
+/* SUMMARY */
+.summary {
+
+}
+
+.summary__title {
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.summary__description {
+    font-size: 26px;
+    font-weight: 300;
+    color: #767676;
+    line-height: 1.5;
+}
+
+/* SECTION & INNER */
+.section {
+    /* 포지션이 없는 경우 부모요소에 적용. 내부 요소에서 absolute 사용할 수도 있기 때문 */
+    position: relative;
+}
+
+.section .inner {
+    max-width: 980px;
+    /* 가운데 정렬 */
+    margin: 0 auto;
+    /* 패딩을 넣었을 때 요소가 커지지 않게 방지 */
+    box-sizing: border-box;
+    /* 포지션이 없는 경우 부모요소에 적용. 내부 요소에서 absolute 사용할 수도 있기 때문 */
+    position: relative;
+}
+
 /* HEADER */
 header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.75);
@@ -96,9 +131,6 @@ header {
 
 header .inner {
     height: 78px;
-    max-width: 980px;
-    /* 가운데 정렬 */
-    margin: 0 auto;
 }
 
 header .menu-group {
@@ -189,4 +221,89 @@ header .sub-menu li a {
 
 header .sub-menu li a:hover {
     color: #4078c5;
+}
+
+/* VISUAL */
+.section--visual {
+    /* position 값이 없지만 동시 적용되는 클래스인 section 클래스에 position이 적용돼 있다. */
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    /* 확대/축소를 하더라도 배경 이미지가 섹션 전체를 덮도록 함 */
+    background-size: cover;
+}
+
+/* 배경 앞에 반투명 창을 띄워서 배경을 어둡게 만들기 */
+.section--visual::before {
+    content: "";
+    /* 부모요소에 position 값이 있는지 확인 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*  right: 0; bottom: 0; 으로 해도 같은 효과가 있다. */
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+}
+
+.section--visual .summary {
+    /* 단축속성으로 flex: 1; 과 같음. 수평정렬 했을때 비율 맞추기 */
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-right: 90px;
+}
+
+.section--visual .inner {
+    padding: 160px 0;
+    display: flex;
+}
+
+.section--visual .summary__title {
+    color: #FFF;
+    font-size: 54px;
+    /* 그림자 추가 (x, y, blur, rgba)*/
+    text-shadow: 0 1px 1px rgba(0,0,0, .25), 
+                 0 1px 25px rgba(0, 0, 0, .75);
+}
+
+.section--visual .summary__description {
+    color: #FFF;
+    /* 그림자 추가 (x, y, blur, rgba)*/
+    text-shadow: 0 1px 1px rgba(0,0,0, .25), 
+                 0 1px 25px rgba(0, 0, 0, .75);
+}
+
+#sign-form {
+     width: 340px;
+     margin-top: 16px;
+}
+
+#sign-form li {
+    margin-bottom: 17px;
+}
+
+#sign-form li:last-child {
+    margin-bottom: 0;
+}
+
+#sign-form .input--text {
+    width: 100%;
+    height: 40px;
+}
+
+#sign-form .caption {
+    font-size: 12px;
+    margin-top: 5px;
+    color: rgba(255, 255, 255, .6);
+    line-height: 1.5;
+    text-align: center;
+}
+
+#sign-form [type="submit"] {
+    width: 100%;
+    height: 62px;
+    padding: 0 25px;
+    font-size: 20px;
+    /* text-align: center 로 가운데 정렬이 안됨. btn 클래스의 display: inline-flex 를 수평 정렬 하려면 justify-content 사용해야 함.*/
+    justify-content: center;
 }
