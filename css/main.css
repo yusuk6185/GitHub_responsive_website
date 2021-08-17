@@ -33,7 +33,7 @@ a {
     content: "";
     position: absolute;
     top: 0;
-    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.07);
@@ -79,11 +79,11 @@ a {
     display: block;
 }
 
-.float-left {
+.float--left {
     float: left;
 }
 
-.float-right {
+.float--right {
     float: right;
 }
 
@@ -451,4 +451,48 @@ header .sub-menu li a:hover {
     /* 가변하는 영역 */
     flex: 1;
     border-left: 1px solid #e5e5e5;
+}
+
+/* FOOTER */
+footer {
+
+}
+
+footer .inner {
+    padding: 50px 0;
+    border-top: 1px solid #eee;
+}
+
+footer .site-links {
+    display: flex;
+}
+
+footer .site-links li {
+    font-size: 12px;
+    margin-right: 10px;
+    color: #767676;
+}
+
+footer .site-links li a {
+    color: #4078c0;
+}
+
+footer .site-links li a:hover {
+    text-decoration: underline;
+}
+
+footer .logo {
+    /* 부모요소를 기준으로 가운데에 '배치' */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+}
+
+footer .logo:hover svg {
+    fill: #4078c0;
 }
