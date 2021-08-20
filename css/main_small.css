@@ -1,0 +1,52 @@
+/* COMMON */
+.summary__title {
+    /* 명시도 무한대 */
+    font-size: 34px !important ;
+}
+
+.summary__description {
+    font-size: 22px;
+}
+
+/* FEATURE */
+.section--feature .tiles li {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+} 
+
+/* WHERE IS */
+#map {
+    /* width: 100%로 하면 문제 발생. 초기화 해줘야 됨 */
+    width: auto;
+    margin: 40px -20px 0;
+    border-left: none;
+    border-right: none;
+}
+
+/* PRICING */
+.section--pricing .card {
+    display: block;
+}
+
+.section--pricing .card .cell2 {
+    border-left: none;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* FOOTER */
+/* flex, justify-content: center 로 하면 줄어들었을때 문제 발생 */
+footer .site-links {
+    float: none;
+    text-align: center;
+    display: block;
+}
+
+footer .site-links:first-child {
+    margin-bottom: 20px;
+}
+
+/* 글자를 다루기 때문에 가운데 정렬할 때 용이 */
+footer .site-links li {
+    display: inline;
+}
