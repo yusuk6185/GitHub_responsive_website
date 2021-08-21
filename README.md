@@ -3,4 +3,4 @@
 This repository is to practice building responisve GitHub website.
 
 ## Instruction
-Execute **index.html**  file.
+Run **index.html**  file.
